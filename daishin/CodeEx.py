@@ -9,6 +9,7 @@ if (bConnect == 0):
 
 # 종목코드 리스트 구하기
 objCpCodeMgr = win32com.client.Dispatch("CpUtil.CpCodeMgr")
+#GetStockListBymarket - 거래소 정보를 받아 온다. - 1 거래소, 2 코스닥
 codeList = objCpCodeMgr.GetStockListByMarket(1)  # 거래소
 codeList2 = objCpCodeMgr.GetStockListByMarket(2)  # 코스닥
 
