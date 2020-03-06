@@ -1,5 +1,4 @@
-import random
+input_name = "김왼손"
 
-numbers = ['1','2','9','20','99','30']
-
-print(random.sample(range(1,46),6))
+if input_name == "김왼손":
+    print('만나서 반가워요',input_name);
