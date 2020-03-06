@@ -1,6 +1,7 @@
 import win32com.client
 
-class _Network:
+class NetworkCheck:
+
     def __init__(self):
         # 연결 여부 체크
         objCpCybos = win32com.client.Dispatch("CpUtil.CpCybos")
