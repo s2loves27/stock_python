@@ -1,20 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6c16a619-fead-495b-af4f-10fce2f6dd2e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/daishin/ChartEx.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/daishin/CurrentPriceEx.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/daishin/MACD_Chart.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/daishin/Multi_CurrentPriceEx.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/daishin/StockWeek.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/daishin/Top200Ex.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/daishin/ViEx.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/daishin/qttest.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/study/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/study/study_for.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daishin/CodeEx.py" beforeDir="false" afterPath="$PROJECT_DIR$/daishin/CodeEx.py" afterDir="false" />
-    </list>
+    <list default="true" id="6c16a619-fead-495b-af4f-10fce2f6dd2e" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,79 +11,22 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/daishin/qttest.py">
+        <entry file="file://$PROJECT_DIR$/study/study_for.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2052">
-              <caret line="108" column="34" selection-start-line="108" selection-start-column="25" selection-end-line="108" selection-end-column="34" />
-              <folding>
-                <element signature="e#0#10#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/daishin/Multi_CurrentPriceEx.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="15" column="50" selection-start-line="15" selection-start-column="50" selection-end-line="15" selection-end-column="50" />
-              <folding>
-                <element signature="e#0#10#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/daishin/ChartEx.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="646">
-              <caret line="34" column="42" selection-start-line="34" selection-start-column="42" selection-end-line="34" selection-end-column="42" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/daishin/MACD_Chart.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3686">
-              <caret line="194" column="23" selection-start-line="194" selection-start-column="23" selection-end-line="194" selection-end-column="23" />
-              <folding>
-                <element signature="e#0#10#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/daishin/Top200Ex.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3325">
-              <caret line="175" column="18" selection-start-line="175" selection-start-column="18" selection-end-line="175" selection-end-column="18" />
-              <folding>
-                <element signature="e#0#10#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/daishin/ViEx.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="608">
-              <caret line="32" column="25" lean-forward="true" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
-              <folding>
-                <element signature="e#0#10#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="57">
+              <caret line="3" column="33" selection-start-line="3" selection-start-column="33" selection-end-line="3" selection-end-column="33" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/study/study_for.py">
+        <entry file="file://$PROJECT_DIR$/daishin/MarketEye.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="57">
-              <caret line="3" column="33" lean-forward="true" selection-start-line="3" selection-start-column="33" selection-end-line="3" selection-end-column="33" />
+            <state relative-caret-position="1038">
+              <caret line="395" column="59" selection-start-line="395" selection-start-column="59" selection-end-line="395" selection-end-column="59" />
+              <folding>
+                <element signature="e#0#10#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -177,8 +107,7 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="368" />
-    <option name="y" value="19" />
+    <option name="x" value="-7" />
     <option name="width" value="1734" />
     <option name="height" value="1407" />
   </component>
@@ -187,8 +116,23 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="stock_python" type="b2602c69:ProjectViewProjectNode" />
+              <item name="stock_python" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="stock_python" type="b2602c69:ProjectViewProjectNode" />
+              <item name="stock_python" type="462c0819:PsiDirectoryNode" />
+              <item name="daishin" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="Scope" />
-      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -339,7 +283,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="368" y="19" width="1734" height="1407" extended-state="0" />
+    <frame x="-7" y="0" width="1734" height="1407" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
@@ -393,81 +337,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/daishin/CodeEx.py">
+    <entry file="file://$PROJECT_DIR$/daishin/CodeEx.py" />
+    <entry file="file://$PROJECT_DIR$/daishin/CurrentPriceEx.py" />
+    <entry file="file://$PROJECT_DIR$/daishin/StockWeek.py" />
+    <entry file="file://$PROJECT_DIR$/daishin/qttest.py" />
+    <entry file="file://$PROJECT_DIR$/daishin/Multi_CurrentPriceEx.py" />
+    <entry file="file://$PROJECT_DIR$/daishin/ChartEx.py" />
+    <entry file="file://$PROJECT_DIR$/daishin/MACD_Chart.py" />
+    <entry file="file://$PROJECT_DIR$/daishin/Top200Ex.py" />
+    <entry file="file://$PROJECT_DIR$/daishin/ViEx.py" />
+    <entry file="file://$PROJECT_DIR$/study/study_for.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="16" column="35" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/daishin/CurrentPriceEx.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="23" column="44" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/daishin/StockWeek.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="627">
-          <caret line="33" column="34" selection-start-line="33" selection-start-column="34" selection-end-line="33" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/daishin/qttest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2052">
-          <caret line="108" column="34" selection-start-line="108" selection-start-column="25" selection-end-line="108" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/daishin/Multi_CurrentPriceEx.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="15" column="50" selection-start-line="15" selection-start-column="50" selection-end-line="15" selection-end-column="50" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/daishin/ChartEx.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="34" column="42" selection-start-line="34" selection-start-column="42" selection-end-line="34" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/daishin/MACD_Chart.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3686">
-          <caret line="194" column="23" selection-start-line="194" selection-start-column="23" selection-end-line="194" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/daishin/Top200Ex.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3325">
-          <caret line="175" column="18" selection-start-line="175" selection-start-column="18" selection-end-line="175" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/daishin/ViEx.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="608">
-          <caret line="32" column="25" lean-forward="true" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="57">
+          <caret line="3" column="33" selection-start-line="3" selection-start-column="33" selection-end-line="3" selection-end-column="33" />
         </state>
       </provider>
     </entry>
@@ -487,10 +369,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/study/study_for.py">
+    <entry file="file://$PROJECT_DIR$/daishin/MarketEye.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" column="33" lean-forward="true" selection-start-line="3" selection-start-column="33" selection-end-line="3" selection-end-column="33" />
+        <state relative-caret-position="1038">
+          <caret line="395" column="59" selection-start-line="395" selection-start-column="59" selection-end-line="395" selection-end-column="59" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
