@@ -4,6 +4,9 @@ import win32com.client
 import ctypes
 import pandas as pd
 import os
+import threading
+
+from daishin import setting
 
 g_objCodeMgr = win32com.client.Dispatch('CpUtil.CpCodeMgr')
 g_objCpStatus = win32com.client.Dispatch('CpUtil.CpCybos')
@@ -114,6 +117,7 @@ class CpEvent:
                     item['특이사항'] = newcancel + self.diccode[cate]
                 else:
                     item['특이사항'] = newcancel + ''
+                item['Update'] = False
 
                 self.caller.listWatchData.insert(0, item)
                 print(item)
@@ -132,6 +136,7 @@ class CpEvent:
             item['종목명'] = name = g_objCodeMgr.CodeToName(code)
             cate = self.client.GetHeaderValue(4)
             item['특이사항'] = cont + self.client.GetHeaderValue(5)
+            item['Update'] = False
             print(item)
             self.caller.listWatchData.insert(0, item)
 
@@ -206,6 +211,7 @@ class CpRpMarketWatch:
             item['종목명'] = g_objCodeMgr.CodeToName(item['코드'])
             cate = self.objStockMst.GetDataValue(3, i)
             item['특이사항'] = self.objStockMst.GetDataValue(4, i)
+            item['Update'] = False
             print(item)
             caller.listWatchData.append(item)
 
@@ -216,6 +222,8 @@ class CpRpMarketWatch:
 
 
 class MyWindow(QMainWindow):
+    end = False
+    start = False
     def __init__(self):
         super().__init__()
 
@@ -227,7 +235,7 @@ class MyWindow(QMainWindow):
         self.objMarketWatch = CpRpMarketWatch()
 
         self.setWindowTitle("특징주 포착(#8092 Market-Watch")
-        self.setGeometry(300, 300, 300, 180)
+        self.setGeometry(300, 300, 300, 400)
 
         nH = 20
 
@@ -241,10 +249,17 @@ class MyWindow(QMainWindow):
         btnExcel.clicked.connect(self.btnExcel_clicked)
         nH += 50
 
+        btnRun = QPushButton('데이터 저장', self)
+        btnRun.move(20, nH)
+        btnRun.clicked.connect(self.btnRun_clicked)
+        nH += 50
+
         btnExit = QPushButton('종료', self)
         btnExit.move(20, nH)
         btnExit.clicked.connect(self.btnExit_clicked)
         nH += 50
+
+
 
         self.objMarketWatch.Request('*', self)
 
@@ -255,26 +270,55 @@ class MyWindow(QMainWindow):
 
     def btnExcel_clicked(self):
 
-        if (len(self.listWatchData) == 0):
-            print('데이터 없음')
-            return
+        today=setting.get_today_str()
 
-        df = pd.DataFrame(columns=['시간', '코드', '종목명', '특이사항'])
 
-        for item in self.listWatchData:
-            df.loc[len(df)] = item
+        df = setting.read_mongo('new', {'Update': {'$eq': False}})
+        df.drop(['_id', 'Update'], axis = 1, inplace=True)
 
-        writer = pd.ExcelWriter(gExcelFile, engine='xlsxwriter')
-        # Convert the dataframe to an XlsxWriter Excel object.
-        df.to_excel(writer, sheet_name='Sheet1')
-        # Close the Pandas Excel writer and output the Excel file.
-        writer.save()
-        os.startfile(gExcelFile)
+        if os.path.exists(setting.NEWPATH.format(today)):
+            df_old = pd.read_excel(setting.NEWPATH.format(today))
+            df = df_old[['코드','종목명','시간','특이사항']].append(df[['코드','종목명','시간','특이사항']])
+
+        print(df)
+        df.sort_values(by=['시간'],axis = 0)
+        df.sort_values(by=['종목명'], axis=0)
+
+        df.to_excel(setting.NEWPATH.format(today), index = False)
+
+        # df.to_excel()
+        setting.update_mongo('new', {'Update': False}, {"$set": {'Update': True}})
         return
+
+    def btnRun_clicked(self):
+        if self.start == False:
+            self.execute_func(1.0)
+            self.start == True
+        if self.end == True:
+            print('저장 취소')
+            self.end = False
+        else:
+            print('저장')
+            self.end = True
+        self.execute_func(10.0)
 
     def btnExit_clicked(self):
         exit()
         return
+
+    def execute_func(self,second=1.0):
+        if self.end == False:
+            return
+        df = pd.DataFrame(columns=['시간', '코드', '종목명', '특이사항','Update'])
+
+        for item in self.listWatchData:
+            df.loc[len(df)] = item
+        if len(self.listWatchData) > 10:
+            setting.write_mongo('new', df)
+            self.listWatchData = []
+
+
+        threading.Timer(second, self.execute_func, [second]).start()
 
 
 if __name__ == "__main__":
@@ -282,5 +326,9 @@ if __name__ == "__main__":
     myWindow = MyWindow()
     myWindow.show()
     app.exec_()
+
+
+
+
 
 

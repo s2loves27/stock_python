@@ -2,10 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6c16a619-fead-495b-af4f-10fce2f6dd2e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/stock_python.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/stock_python.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/daishin/setting.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/daishin/MarketEye.py" beforeDir="false" afterPath="$PROJECT_DIR$/daishin/MarketEye.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/daishin/data/재무비율_년.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/daishin/data/재무비율_년.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/daishin/data/재무제표_년.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/daishin/data/재무제표_년.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/daishin/data/종목코드.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/daishin/data/투자지표.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/daishin/data/투자지표.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/daishin/new.py" beforeDir="false" afterPath="$PROJECT_DIR$/daishin/new.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,19 +20,31 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/study/study_for.py">
+        <entry file="file://$PROJECT_DIR$/Stock/get-pip.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="57">
-              <caret line="3" column="33" selection-start-line="3" selection-start-column="33" selection-end-line="3" selection-end-column="33" />
+            <state relative-caret-position="532">
+              <caret line="33" column="7" selection-start-line="33" selection-start-column="7" selection-end-line="33" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/daishin/MarketEye.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="320">
+              <caret line="494" column="12" selection-start-line="494" selection-start-column="12" selection-end-line="494" selection-end-column="12" />
+              <folding>
+                <element signature="e#0#10#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/daishin/MarketEye.py">
+        <entry file="file://$PROJECT_DIR$/daishin/new.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="760">
-              <caret line="513" column="45" lean-forward="true" selection-start-line="513" selection-start-column="45" selection-end-line="513" selection-end-column="45" />
+            <state relative-caret-position="356">
+              <caret line="281" lean-forward="true" selection-start-line="281" selection-end-line="281" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -37,20 +53,49 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Stock/chartEx.py">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://C:/ProgramData/Anaconda3/envs/stock/Lib/site-packages/xlsxwriter/workbook.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="282">
+              <caret line="314" column="75" selection-start-line="314" selection-start-column="75" selection-end-line="314" selection-end-column="75" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Stock/get-pip.py">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://C:/ProgramData/Anaconda3/envs/stock/Lib/site-packages/pandas/util/_decorators.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="244">
+              <caret line="207" selection-start-line="207" selection-end-line="207" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://C:/ProgramData/Anaconda3/envs/stock/Lib/site-packages/xlrd/__init__.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-3">
+              <caret line="97" selection-start-line="97" selection-end-line="97" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/daishin/setting.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="371">
+              <caret line="82" column="20" selection-start-line="82" selection-start-column="20" selection-end-line="82" selection-end-column="20" />
+              <folding>
+                <element signature="e#19#33#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Stock/news.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="608">
-              <caret line="37" column="13" selection-start-line="37" selection-start-column="6" selection-end-line="37" selection-end-column="13" />
+            <state relative-caret-position="741">
+              <caret line="44" column="30" selection-start-line="44" selection-start-column="30" selection-end-line="44" selection-end-column="30" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -69,13 +114,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Creon</find>
-      <find>GetDataValue</find>
-      <find>objStockMst</find>
-      <find>CpStockMst</find>
-      <find>CpEvent</find>
-      <find>objStockCur</find>
-      <find>Request</find>
       <find>isRq</find>
       <find>OnReceived</find>
       <find>Unsubscribe</find>
@@ -90,7 +128,22 @@
       <find>Subscribe</find>
       <find>quant</find>
       <find>make_market_cap</find>
+      <find>del</find>
+      <find>CpPBMarkeWatch</find>
+      <find>g_objCodeMgr</find>
+      <find>code</find>
+      <find>objMarketWatch</find>
+      <find>CpRpMarketWatch</find>
+      <find>CpEvent</find>
+      <find>df</find>
+      <find>execute_func</find>
       <find>get_fscore_1</find>
+      <find>Collection</find>
+      <find>listWatchData</find>
+      <find>clear</find>
+      <find>timestr</find>
+      <find>to_excel</find>
+      <find>get_today_str</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -112,13 +165,16 @@
         <option value="$PROJECT_DIR$/daishin/ViEx.py" />
         <option value="$PROJECT_DIR$/study/study_for.py" />
         <option value="$PROJECT_DIR$/daishin/MarketEye.py" />
+        <option value="$PROJECT_DIR$/daishin/dbtest.py" />
+        <option value="$PROJECT_DIR$/daishin/setting.py" />
+        <option value="$PROJECT_DIR$/daishin/new.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-7" />
-    <option name="width" value="1734" />
-    <option name="height" value="1407" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="1735" />
+    <option name="width" value="1736" />
+    <option name="height" value="1416" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -138,6 +194,12 @@
               <item name="stock_python" type="462c0819:PsiDirectoryNode" />
               <item name="daishin" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="stock_python" type="b2602c69:ProjectViewProjectNode" />
+              <item name="stock_python" type="462c0819:PsiDirectoryNode" />
+              <item name="daishin" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -147,7 +209,7 @@
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../auto_stack" />
     <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RunDashboard">
@@ -162,28 +224,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.MarketEye">
-    <configuration name="MACD_Chart" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="stock_python" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/daishin" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/daishin/MACD_Chart.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python.new">
     <configuration name="MarketEye" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="stock_python" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -205,7 +246,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Top200Ex" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="dbtest" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="stock_python" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -217,7 +258,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/daishin/Top200Ex.py" />
+      <option name="SCRIPT_NAME" value="C:\git\stock_python\daishin\setting.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -226,7 +267,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="ViEx" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="new" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="stock_python" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -238,7 +279,28 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/daishin/ViEx.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/daishin/new.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="setting" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="stock_python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/daishin" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/daishin/setting.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -270,11 +332,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.new" />
+        <item itemvalue="Python.setting" />
+        <item itemvalue="Python.dbtest" />
         <item itemvalue="Python.MarketEye" />
         <item itemvalue="Python.study_for" />
-        <item itemvalue="Python.ViEx" />
-        <item itemvalue="Python.Top200Ex" />
-        <item itemvalue="Python.MACD_Chart" />
       </list>
     </recent_temporary>
   </component>
@@ -296,27 +358,43 @@
       <option name="project" value="LOCAL" />
       <updated>1583705984813</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="+add new">
+      <created>1583886125042</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1583886125042</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="1734" height="1407" extended-state="0" />
+    <frame x="-8" y="-8" width="3456" height="1416" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12404915" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4994104" visible="true" weight="0.16260801" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4941486" weight="0.16380656" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49297836" visible="true" weight="0.31669268" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5005896" side_tool="true" visible="true" weight="0.16260801" />
-      <window_info anchor="bottom" id="Python Console" order="10" />
+      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.497952" weight="0.32839313" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49766356" weight="0.32858273" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49883178" weight="0.32858273" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50702167" side_tool="true" visible="true" weight="0.31669268" />
+      <window_info anchor="bottom" id="Python Console" order="10" sideWeight="0.49941587" weight="0.3293745" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -325,7 +403,8 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="+2020/03/09" />
-    <option name="LAST_COMMIT_MESSAGE" value="+2020/03/09" />
+    <MESSAGE value="+add new" />
+    <option name="LAST_COMMIT_MESSAGE" value="+add new" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -378,23 +457,104 @@
     <entry file="file://$PROJECT_DIR$/Stock/chartEx.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Stock/get-pip.py">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/daishin/Main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1853">
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Stock/news.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="608">
-          <caret line="37" column="13" selection-start-line="37" selection-start-column="6" selection-end-line="37" selection-end-column="13" />
+        <state relative-caret-position="741">
+          <caret line="44" column="30" selection-start-line="44" selection-start-column="30" selection-end-line="44" selection-end-column="30" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://C:/ProgramData/Anaconda3/envs/stock/Lib/site-packages/pymongo/collection.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="831">
+          <caret line="3338" selection-start-line="3338" selection-end-line="3338" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/daishin/CodeLoad.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/daishin/networkCheck.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Stock/get-pip.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="33" column="7" selection-start-line="33" selection-start-column="7" selection-end-line="33" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/ProgramData/Anaconda3/envs/stock/Lib/site-packages/pandas/util/_decorators.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="207" selection-start-line="207" selection-end-line="207" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/ProgramData/Anaconda3/envs/stock/Lib/site-packages/pandas/core/frame.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="7122" selection-start-line="7122" selection-end-line="7122" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/daishin/setting.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="371">
+          <caret line="82" column="20" selection-start-line="82" selection-start-column="20" selection-end-line="82" selection-end-column="20" />
+          <folding>
+            <element signature="e#19#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/ProgramData/Anaconda3/envs/stock/Lib/site-packages/xlrd/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3">
+          <caret line="97" selection-start-line="97" selection-end-line="97" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/daishin/MarketEye.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="760">
-          <caret line="513" column="45" lean-forward="true" selection-start-line="513" selection-start-column="45" selection-end-line="513" selection-end-column="45" />
+        <state relative-caret-position="320">
+          <caret line="494" column="12" selection-start-line="494" selection-start-column="12" selection-end-line="494" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/ProgramData/Anaconda3/envs/stock/Lib/site-packages/pandas/core/indexes/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="5339" selection-start-line="5339" selection-end-line="5339" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/ProgramData/Anaconda3/envs/stock/Lib/site-packages/xlsxwriter/workbook.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="314" column="75" selection-start-line="314" selection-start-column="75" selection-end-line="314" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/daishin/new.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="356">
+          <caret line="281" lean-forward="true" selection-start-line="281" selection-end-line="281" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>

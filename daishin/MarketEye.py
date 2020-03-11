@@ -491,6 +491,7 @@ def data_merge_iv(value_list):
 
     return df_data_main
 
+
 #     순위 구하기
 def data_rank():
     timestr = get_time_str()
