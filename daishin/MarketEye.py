@@ -341,7 +341,7 @@ class quant:
 
     # 저평가 + F-score
     def get_value_quality(self, fs_df, num):
-        low_market_cap = self.make_market_cap(fs_df, 200)
+        # low_market_cap = self.make_market_cap(fs_df, 200)
         value = self.make_value_combo(['PER', 'PBR', 'PSR', 'PCR'], fs_df, None)
         quality = self.get_fscore_1(fs_df, None)
         value_quality = pd.merge(value, quality, how='outer', left_index=True, right_index=True)
@@ -514,5 +514,5 @@ if __name__ == "__main__":
     data_merge_fs(['자산', '부채', '자본', '영업활동으로인한현금흐름'])
     data_merge_fr(['총자산회전율', 'ROA'])
     data_merge_iv(['총현금흐름'])
-    # data_rank()
+    data_rank()
 
