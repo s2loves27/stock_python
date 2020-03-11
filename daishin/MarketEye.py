@@ -392,6 +392,7 @@ class quant:
         clean_df = raw_data.loc[raw_data.index.dropna()]
 
         return clean_df
+
     # def get_data(self, main_df, sub_df):
     #     df = df_data_sub[(df_data_main['분기결산년월'],'총자산회전율')]
     #     print(df)
@@ -490,6 +491,14 @@ def data_merge_iv(value_list):
     df_data_main.to_excel(r'.\data\data{}.xlsx'.format(timestr))
 
     return df_data_main
+def get_stock_inc(self, path):
+    timestr = get_time_str()
+    quant_test = quant()
+    path = r'.\data\data{}.xlsx'.format(timestr)
+    df_data_main = quant_test.get_load(path)
+
+    path = r'.\data\상장주식수.xlsx'.format(timestr)
+    df_data_sub = quant_test.get_finance_data(path)
 
 
 #     순위 구하기

@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6c16a619-fead-495b-af4f-10fce2f6dd2e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/daishin/setting.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/daishin/MarketEye.py" beforeDir="false" afterPath="$PROJECT_DIR$/daishin/MarketEye.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daishin/data/재무비율_년.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/daishin/data/재무비율_년.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daishin/data/재무제표_년.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/daishin/data/재무제표_년.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daishin/data/종목코드.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/daishin/data/투자지표.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/daishin/data/투자지표.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daishin/new.py" beforeDir="false" afterPath="$PROJECT_DIR$/daishin/new.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,11 +22,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/daishin/MarketEye.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="494" column="12" selection-start-line="494" selection-start-column="12" selection-end-line="494" selection-end-column="12" />
+            <state relative-caret-position="810">
+              <caret line="500" column="51" lean-forward="true" selection-start-line="500" selection-start-column="51" selection-end-line="500" selection-end-column="51" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -40,11 +34,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/daishin/new.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="356">
-              <caret line="281" lean-forward="true" selection-start-line="281" selection-end-line="281" />
+            <state relative-caret-position="622">
+              <caret line="190" lean-forward="true" selection-start-line="190" selection-end-line="190" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -114,7 +108,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>isRq</find>
       <find>OnReceived</find>
       <find>Unsubscribe</find>
       <find>CpStockChart</find>
@@ -135,7 +128,6 @@
       <find>objMarketWatch</find>
       <find>CpRpMarketWatch</find>
       <find>CpEvent</find>
-      <find>df</find>
       <find>execute_func</find>
       <find>get_fscore_1</find>
       <find>Collection</find>
@@ -144,6 +136,8 @@
       <find>timestr</find>
       <find>to_excel</find>
       <find>get_today_str</find>
+      <find>df</find>
+      <find>get_load</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -164,10 +158,10 @@
         <option value="$PROJECT_DIR$/daishin/Top200Ex.py" />
         <option value="$PROJECT_DIR$/daishin/ViEx.py" />
         <option value="$PROJECT_DIR$/study/study_for.py" />
-        <option value="$PROJECT_DIR$/daishin/MarketEye.py" />
         <option value="$PROJECT_DIR$/daishin/dbtest.py" />
         <option value="$PROJECT_DIR$/daishin/setting.py" />
         <option value="$PROJECT_DIR$/daishin/new.py" />
+        <option value="$PROJECT_DIR$/daishin/MarketEye.py" />
       </list>
     </option>
   </component>
@@ -365,7 +359,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583886125042</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="+add new">
+      <created>1583916734368</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1583916734368</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TodoView">
@@ -387,13 +388,13 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4941486" weight="0.16380656" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49297836" visible="true" weight="0.31669268" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49297836" visible="true" weight="0.22932917" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.497952" weight="0.32839313" />
       <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49766356" weight="0.32858273" />
       <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49883178" weight="0.32858273" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50702167" side_tool="true" visible="true" weight="0.31669268" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50702167" side_tool="true" visible="true" weight="0.22932917" />
       <window_info anchor="bottom" id="Python Console" order="10" sideWeight="0.49941587" weight="0.3293745" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -527,16 +528,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/daishin/MarketEye.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="494" column="12" selection-start-line="494" selection-start-column="12" selection-end-line="494" selection-end-column="12" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/ProgramData/Anaconda3/envs/stock/Lib/site-packages/pandas/core/indexes/base.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="244">
@@ -553,8 +544,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/daishin/new.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="356">
-          <caret line="281" lean-forward="true" selection-start-line="281" selection-end-line="281" />
+        <state relative-caret-position="622">
+          <caret line="190" lean-forward="true" selection-start-line="190" selection-end-line="190" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/daishin/MarketEye.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="810">
+          <caret line="500" column="51" lean-forward="true" selection-start-line="500" selection-start-column="51" selection-end-line="500" selection-end-column="51" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
