@@ -8,7 +8,7 @@ import pandas as pd
 import time
 
 
-
+DATAPATH = r'.\data\{}'
 NEWPATH = r'.\data\new{}.xlsx'
 collect = None
 conn = None

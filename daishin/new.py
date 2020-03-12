@@ -12,8 +12,8 @@ g_objCodeMgr = win32com.client.Dispatch('CpUtil.CpCodeMgr')
 g_objCpStatus = win32com.client.Dispatch('CpUtil.CpCybos')
 g_objCpTrade = win32com.client.Dispatch('CpTrade.CpTdUtil')
 
-gExcelFile = '8092.xlsx'
-
+# gExcelFile = '8092.xlsx'
+DATAPATH = r
 
 def InitPlusCheck():
     # 프로세스가 관리자 권한으로 실행 여부
@@ -281,8 +281,7 @@ class MyWindow(QMainWindow):
             df = df_old[['코드','종목명','시간','특이사항']].append(df[['코드','종목명','시간','특이사항']])
 
         print(df)
-        df.sort_values(by=['시간'],axis = 0)
-        df.sort_values(by=['종목명'], axis=0)
+        df = df.sort_values(by=['종목명','시간'],axis = 0)
 
         df.to_excel(setting.NEWPATH.format(today), index = False)
 
