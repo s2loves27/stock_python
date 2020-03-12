@@ -1,6 +1,6 @@
 from daishin import setting
 
-DATAPATH = r'.\data\{}\{}\{}.xlsm'
+DATAPATH = r'.\data\{}\{}{}.xlsm'
 
-print(DATAPATH.format(setting.get_today_str(), setting.get_today_str(), 'lowcap_sorted'))
+print(DATAPATH.format(setting.get_today_str(), 'lowcap_sorted',setting.get_today_str() ))
 

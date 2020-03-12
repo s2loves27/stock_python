@@ -28,7 +28,7 @@ def delete_code(x):
 # [코드 3.15] 재무제표 데이터를 가져와 데이터프레임으로 만드는 함수 (CH3. 데이터 수집하기.ipynb)
 
 def make_fs_dataframe_year(firm_code):
-    fs_url = 'https://comp.fnguide.com/SVO2/asp/SVD_Finance.asp?pGB=1&gicode=A001750&cID=&MenuYn=Y&ReportGB=&NewMenuID=103&stkGb=701'.format(
+    fs_url = 'https://comp.fnguide.com/SVO2/asp/SVD_Finance.asp?pGB=1&gicode={}&cID=&MenuYn=Y&ReportGB=&NewMenuID=103&stkGb=701'.format(
         firm_code)
     fs_page = requests.get(fs_url)
     fs_tables = pd.read_html(fs_page.text)
