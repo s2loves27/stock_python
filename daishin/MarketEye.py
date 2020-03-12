@@ -256,8 +256,8 @@ class CMarketTotal():
 
         timestr = self.get_time_str()
         sorted_df = self.make_low_cap(data_df)
-        sorted_df.to_excel(r'.\data\lowcap_sorted{}.xlsx'.format(timestr))
-        data_df.to_excel(r'.\data\data{}.xlsx'.format(timestr))
+        sorted_df.to_excel(r'.\data\{}\lowcap_sorted{}.xlsx'.format(timestr,timestr))
+        data_df.to_excel(r'.\data\{}\data{}.xlsx'.format(timestr,timestr))
 
 
         print('finish')
@@ -330,22 +330,28 @@ class quant:
     def get_fscore_1(self, fscore_df, num):
         fscore_df['영업활동으로인한현금흐름점수'] = fscore_df['영업활동으로인한현금흐름'] > 0
         fscore_df['전년대비ROA증가율점수'] = fscore_df['전년대비ROA증가율'] > 0
-        fscore_df['영업활동으로인한현금흐름점수'] = fscore_df['영업활동으로인한현금흐름점수'] > fscore_df['분기당기순이익']
-        fscore_df['전년대비총자산회전율점수'] = fscore_df['전년대비총자산회전율'] > 0
+        fscore_df['영업활동으로인한현금흐름점수_1'] = (fscore_df['영업활동으로인한현금흐름점수']/100000000) > fscore_df['분기당기순이익']
+        fscore_df['전년대비총자산회전율점수'] = fscore_df['전년대비총자산회전율'] >= 0
+        fscore_df['상장주식수변화량점수'] = fscore_df['상장주식수변화량'] <= 0
+        fscore_df['종합점수'] = fscore_df[['영업활동으로인한현금흐름점수', '전년대비ROA증가율점수', '영업활동으로인한현금흐름점수_1', '전년대비총자산회전율점수', '상장주식수변화량점수']].sum(axis=1)
+        print(len(fscore_df[fscore_df['영업활동으로인한현금흐름점수'] == 1]))
+        print(len(fscore_df[fscore_df['전년대비ROA증가율점수'] == 1]))
+        print(len(fscore_df[fscore_df['영업활동으로인한현금흐름점수_1'] == 1]))
+        print(len(fscore_df[fscore_df['전년대비총자산회전율점수'] == 1]))
+        print(len(fscore_df[fscore_df['상장주식수변화량점수'] == 1]))
 
-        fscore_df['종합점수'] = fscore_df[['영업활동으로인한현금흐름점수', '전년대비ROA증가율점수', '영업활동으로인한현금흐름점수', '전년대비총자산회전율점수']].sum(axis=1)
+        fscore_df = fscore_df[fscore_df['종합점수'] == 5]
 
-        fscore_df = fscore_df[fscore_df['종합점수'] == 4]
 
         return fscore_df[:num]
 
     # 저평가 + F-score
     def get_value_quality(self, fs_df, num):
-        low_market_cap = self.make_market_cap(fs_df, 200)
+        # low_market_cap = self.make_market_cap(fs_df, 200)
         value = self.make_value_combo(['PER', 'PBR', 'PSR', 'PCR'], fs_df, None)
         quality = self.get_fscore_1(fs_df, None)
         value_quality = pd.merge(value, quality, how='outer', left_index=True, right_index=True)
-        value_quality_filtered = value_quality[value_quality['종합점수'] > 7]
+        value_quality_filtered = value_quality[value_quality['종합점수'] == 5]
         vq_df = value_quality_filtered.sort_values(by='종합순위')
         return vq_df[:num]
 
@@ -364,7 +370,7 @@ class quant:
 
     def save_finance_data(self, data_df):
         timestr = self.get_time_str()
-        data_df.to_excel(r'.\data\data_sort{}.xlsx'.format(timestr))
+        data_df.to_excel(r'.\data\{}\data_sort{}.xlsx'.format(timestr,timestr))
 
     def get_time_str(self):
         global timestr
@@ -392,6 +398,7 @@ class quant:
         clean_df = raw_data.loc[raw_data.index.dropna()]
 
         return clean_df
+
     # def get_data(self, main_df, sub_df):
     #     df = df_data_sub[(df_data_main['분기결산년월'],'총자산회전율')]
     #     print(df)
@@ -412,10 +419,10 @@ def float_to_str(df):
 def data_merge_fr(value_list):
     timestr = get_time_str()
     quant_test = quant()
-    path = r'.\data\data{}.xlsx'.format(timestr)
+    path = r'.\data\{}\data{}.xlsx'.format(timestr,timestr)
     df_data_main = quant_test.get_load(path)
 
-    path = r'.\data\재무비율_년.xlsx'.format(timestr)
+    path = r'.\data\{}\재무비율_년.xlsx'.format(timestr,timestr)
     df_data_sub = quant_test.get_finance_data(path)
 
     data = {}
@@ -434,23 +441,23 @@ def data_merge_fr(value_list):
         value_1 = str(year) + "/" + "12"
         value_2 = value[:4] + "/" + value[4:len(value) - 2]
         data[df_data_sub.index[num]] = float(df_data_sub[(format(value_2), '총자산회전율')].loc[df_data_sub.index[num]]) - float(df_data_sub[(format(value_1), '총자산회전율')].loc[df_data_sub.index[num]])
-        data_2[df_data_sub.index[num]] = float(df_data_sub[(format(value_2), 'ROA')].loc[df_data_sub.index[num]]) - float(df_data_sub[(format(value_1), 'ROA')].loc[df_data_sub.index[num]])
+        data_2[df_data_sub.index[num]] = float(df_data_sub[(format(value_2), 'ROA')].apply(check_IFRS).loc[df_data_sub.index[num]]) - float(df_data_sub[(format(value_1), 'ROA')].apply(check_IFRS).loc[df_data_sub.index[num]])
     add_srs = pd.Series(data)
     add_srs_2 = pd.Series(data_2)
     df_data_main['전년대비총자산회전율'] = add_srs
     df_data_main['전년대비ROA증가율'] = add_srs_2
 
-    df_data_main.to_excel(r'.\data\data{}.xlsx'.format(timestr))
+    df_data_main.to_excel(r'.\data\{}\data{}.xlsx'.format(timestr,timestr))
 
     return df_data_main
 
 def data_merge_fs(value_list):
     timestr = get_time_str()
     quant_test = quant()
-    path = r'.\data\data{}.xlsx'.format(timestr)
+    path = r'.\data\{}\data{}.xlsx'.format(timestr,timestr)
     df_data_main = quant_test.get_load(path)
 
-    path = r'.\data\재무제표_년.xlsx'.format(timestr)
+    path = r'.\data\{}\재무제표_년.xlsx'.format(timestr,timestr)
     df_data_sub = quant_test.get_finance_data(path)
 
     data = {}
@@ -464,17 +471,17 @@ def data_merge_fs(value_list):
         add_srs = pd.Series(data)
         df_data_main[contents] = add_srs
 
-    df_data_main.to_excel(r'.\data\data{}.xlsx'.format(timestr))
+    df_data_main.to_excel(r'.\data\{}\data{}.xlsx'.format(timestr,timestr))
 
     return df_data_main
 
 def data_merge_iv(value_list):
     timestr = get_time_str()
     quant_test = quant()
-    path = r'.\data\data{}.xlsx'.format(timestr)
+    path = r'.\data\{}\data{}.xlsx'.format(timestr,timestr)
     df_data_main = quant_test.get_load(path)
 
-    path = r'.\data\투자지표.xlsx'.format(timestr)
+    path = r'.\data\{}\투자지표.xlsx'.format(timestr,timestr)
     df_data_sub = quant_test.get_finance_data(path)
 
     data = {}
@@ -487,15 +494,56 @@ def data_merge_iv(value_list):
         add_srs = pd.Series(data)
         df_data_main[contents] = add_srs
 
-    df_data_main.to_excel(r'.\data\data{}.xlsx'.format(timestr))
+    for num, value in enumerate(df_data):
+        value = str(value)
+        value = value[:4] + "/" + value[4:len(value) - 2]
+        data[df_data_sub.index[num]] = df_data_sub[(format(value), '매출총이익')].loc[df_data_sub.index[num]] / df_data_sub[(format(value), '자산')].loc[df_data_sub.index[num]]
+    add_srs = pd.Series(data)
+    df_data_main['GP/A'] = add_srs
+
+    df_data_main.to_excel(r'.\data\{}\data{}.xlsx'.format(timestr,timestr))
 
     return df_data_main
+def data_merge_st(value_list):
+    timestr = get_time_str()
+    quant_test = quant()
+    path = r'.\data\{}\data{}.xlsx'.format(timestr,timestr)
+    df_data_main = quant_test.get_load(path)
+
+    path = r'.\data\{}\상장주식수.xlsx'.format(timestr,timestr)
+    df_data_sub = quant_test.get_finance_data(path)
+
+    data = {}
+    df_data = df_data_main['결산년월'].dropna()
+
+    for i, contents in enumerate(value_list):
+        for num, value in enumerate(df_data):
+            value = str(value)
+            year = int(value[:4]) - 1
+            month = int(value[4:len(value) - 2])
+            value = str(value)
+            if month < 10:
+                value_2 = value[:4] + "/" + "0" + str(month)
+                value_1 = str(year) + "/" + "0" + str(month)
+            else:
+                value_2 = value[:4] + "/" + str(month)
+                value_1 = str(year) + "/" + str(month)
+            try:
+                data[df_data_sub.index[num]] = float(df_data_sub[(format(value_2), '발행주식수')].loc[df_data_sub.index[num]]) - float(df_data_sub[(format(value_1), '발행주식수')].loc[df_data_sub.index[num]])
+            except KeyError:
+                data[df_data_sub.index[num]] = 0
+        add_srs = pd.Series(data)
+        df_data_main['상장주식수변화량'] = add_srs
+
+    df_data_main.to_excel(r'.\data\{}\data{}.xlsx'.format(timestr,timestr))
+
+
 
 #     순위 구하기
 def data_rank():
     timestr = get_time_str()
     quant_test =  quant()
-    path = r'.\data\data{}.xlsx'.format(timestr)
+    path = r'.\data\{}\data{}.xlsx'.format(timestr,timestr)
     df_data = quant_test.get_load(path)
     df_sort = quant_test.get_value_quality(df_data, None)
     quant_test.save_finance_data(df_sort)
@@ -507,12 +555,19 @@ def data_load():
     objMarketTotal.GetAllMarketTotal()
     objMarketTotal.PrintMarketTotal()
 
+def check_IFRS(x):
+    if x == 'N/A(IFRS)':
+        return np.NaN
+    else:
+        return x
 
 if __name__ == "__main__":
     # 매일 데이터 불러오기.
-    data_load()
-    data_merge_fs(['자산', '부채', '자본', '영업활동으로인한현금흐름'])
-    data_merge_fr(['총자산회전율', 'ROA'])
-    data_merge_iv(['총현금흐름'])
-    # data_rank()
+    # data_load()
+    # data_merge_fs(['자산', '부채', '자본', '영업활동으로인한현금흐름'])
+    # data_merge_fr(['총자산회전율', 'ROA'])
+    # data_merge_iv(['총현금흐름'])
+    # data_merge_st(['발행주식수'])
+    data_rank()
+    print('끝!!!!')
 
