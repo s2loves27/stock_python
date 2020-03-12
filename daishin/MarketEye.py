@@ -9,6 +9,8 @@ import datetime
 
 ################################################
 # PLUS 공통 OBJECT
+from daishin import setting
+
 g_objCodeMgr = win32com.client.Dispatch('CpUtil.CpCodeMgr')
 g_objCpStatus = win32com.client.Dispatch('CpUtil.CpCybos')
 g_objCpTrade = win32com.client.Dispatch('CpTrade.CpTdUtil')
@@ -16,6 +18,8 @@ g_objCpTrade = win32com.client.Dispatch('CpTrade.CpTdUtil')
 ################################################
 
 FORMAT_DATETIME = "%Y-%m-%d"
+today = setting.get_time_str()
+
 # PLUS 실행 기본 체크 함수
 def InitPlusCheck():
     # 프로세스가 관리자 권한으로 실행 여부
@@ -254,21 +258,15 @@ class CMarketTotal():
                                                        '분기ROE', '분기이자보상비율', '분기유보율', '분기부채비율', '분기결산년월','당일외국인순매수', '당일기관순매수', 'SPS', 'CFPS', 'EBITDA', 'ELW 손익분기율'])
         data_df.index = data_df['종목코드']
 
-        timestr = self.get_time_str()
+
         sorted_df = self.make_low_cap(data_df)
-        sorted_df.to_excel(r'.\data\{}\lowcap_sorted{}.xlsx'.format(timestr,timestr))
-        data_df.to_excel(r'.\data\{}\data{}.xlsx'.format(timestr,timestr))
+        sorted_df.to_excel(setting.DATAPATH.format(today, 'lowcap_sorted', today))
+        data_df.to_excel(setting.DATAPATH.format(today, 'data', today))
 
 
         print('finish')
 
 
-
-    def get_time_str(self):
-        global timestr
-        timestr = datetime.datetime.fromtimestamp(
-            int(time.time())).strftime(self.FORMAT_DATETIME)
-        return timestr
 
     def make_low_cap(self, data_df):
         data_df = data_df.sort_values('시가총액', ascending=False)
@@ -369,14 +367,8 @@ class quant:
         return raw_data
 
     def save_finance_data(self, data_df):
-        timestr = self.get_time_str()
-        data_df.to_excel(r'.\data\{}\data_sort{}.xlsx'.format(timestr,timestr))
+        data_df.to_excel(setting.DATAPATH.format(today, 'data_sort', today))
 
-    def get_time_str(self):
-        global timestr
-        timestr = datetime.datetime.fromtimestamp(
-            int(time.time())).strftime(self.FORMAT_DATETIME)
-        return timestr
 
     def get_finance_data(self, path):
         data_path = path
@@ -406,23 +398,18 @@ class quant:
 
 
 
-def get_time_str():
-    global timestr
-    timestr = datetime.datetime.fromtimestamp(
-        int(time.time())).strftime(FORMAT_DATETIME)
-    return timestr
+
 def float_to_str(df):
     df = str(df)
     df = df[:len(df)]
 
 
 def data_merge_fr(value_list):
-    timestr = get_time_str()
     quant_test = quant()
-    path = r'.\data\{}\data{}.xlsx'.format(timestr,timestr)
+    path = setting.DATAPATH.format(today, 'data', today)
     df_data_main = quant_test.get_load(path)
 
-    path = r'.\data\{}\재무비율_년.xlsx'.format(timestr,timestr)
+    path = setting.DATAPATH.format(today, '재무비율_년', today)
     df_data_sub = quant_test.get_finance_data(path)
 
     data = {}
@@ -447,17 +434,16 @@ def data_merge_fr(value_list):
     df_data_main['전년대비총자산회전율'] = add_srs
     df_data_main['전년대비ROA증가율'] = add_srs_2
 
-    df_data_main.to_excel(r'.\data\{}\data{}.xlsx'.format(timestr,timestr))
+    df_data_main.to_excel(setting.DATAPATH.format(today, 'data', today))
 
     return df_data_main
 
 def data_merge_fs(value_list):
-    timestr = get_time_str()
     quant_test = quant()
-    path = r'.\data\{}\data{}.xlsx'.format(timestr,timestr)
+    path = setting.DATAPATH.format(today, 'data', today)
     df_data_main = quant_test.get_load(path)
 
-    path = r'.\data\{}\재무제표_년.xlsx'.format(timestr,timestr)
+    path = setting.DATAPATH.format(today, '재무제표_년', today)
     df_data_sub = quant_test.get_finance_data(path)
 
     data = {}
@@ -471,17 +457,16 @@ def data_merge_fs(value_list):
         add_srs = pd.Series(data)
         df_data_main[contents] = add_srs
 
-    df_data_main.to_excel(r'.\data\{}\data{}.xlsx'.format(timestr,timestr))
+    df_data_main.to_excel(setting.DATAPATH.format(today, 'data', today))
 
     return df_data_main
 
 def data_merge_iv(value_list):
-    timestr = get_time_str()
     quant_test = quant()
-    path = r'.\data\{}\data{}.xlsx'.format(timestr,timestr)
+    path = setting.DATAPATH.format(today, 'data', today)
     df_data_main = quant_test.get_load(path)
 
-    path = r'.\data\{}\투자지표.xlsx'.format(timestr,timestr)
+    path = setting.DATAPATH.format(today, '투자지표', today)
     df_data_sub = quant_test.get_finance_data(path)
 
     data = {}
@@ -501,16 +486,15 @@ def data_merge_iv(value_list):
     add_srs = pd.Series(data)
     df_data_main['GP/A'] = add_srs
 
-    df_data_main.to_excel(r'.\data\{}\data{}.xlsx'.format(timestr,timestr))
+    df_data_main.to_excel(setting.DATAPATH.format(today, 'data', today))
 
     return df_data_main
 def data_merge_st(value_list):
-    timestr = get_time_str()
     quant_test = quant()
-    path = r'.\data\{}\data{}.xlsx'.format(timestr,timestr)
+    path = setting.DATAPATH.format(today, 'data', today)
     df_data_main = quant_test.get_load(path)
 
-    path = r'.\data\{}\상장주식수.xlsx'.format(timestr,timestr)
+    path = setting.DATAPATH.format(today, '상장주식수', today)
     df_data_sub = quant_test.get_finance_data(path)
 
     data = {}
@@ -535,15 +519,14 @@ def data_merge_st(value_list):
         add_srs = pd.Series(data)
         df_data_main['상장주식수변화량'] = add_srs
 
-    df_data_main.to_excel(r'.\data\{}\data{}.xlsx'.format(timestr,timestr))
+    df_data_main.to_excel(setting.DATAPATH.format(today, 'data', today))
 
 
 
 #     순위 구하기
 def data_rank():
-    timestr = get_time_str()
     quant_test =  quant()
-    path = r'.\data\{}\data{}.xlsx'.format(timestr,timestr)
+    path = setting.DATAPATH.format(today, 'data', today)
     df_data = quant_test.get_load(path)
     df_sort = quant_test.get_value_quality(df_data, None)
     quant_test.save_finance_data(df_sort)

@@ -8,8 +8,10 @@ import pandas as pd
 import time
 
 
-DATAPATH = r'.\data\{}'
+DATAPATH = r'.\data\{}\{}{}.xlsm'
 NEWPATH = r'.\data\new{}.xlsx'
+
+
 collect = None
 conn = None
 

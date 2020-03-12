@@ -16,6 +16,7 @@ code_data = pd.read_excel(path)
 code_data = code_data[['종목코드']]
 
 # [코드 3.26] 종목코드 컬럼 개선 (CH3. 데이터 수집하기.ipynb)
+today = setting.get_today_str()
 
 def make_code(x):
     x = str(x)
@@ -194,7 +195,7 @@ def change_df(firm_code, dataframe):
     return total_df
 
 def save_fs_year():
-    today = setting.get_today_str()
+
     for num, code in enumerate(code_data['종목코드']):
         try:
             print(num, code)
@@ -217,7 +218,7 @@ def save_fs_year():
         except KeyError:
             continue
 
-    total_fs_y.to_excel(r'.\data\{}\재무제표_년.xlsx'.format(today))
+    total_fs_y.to_excel(setting.DATAPATH.format(today, '제무제표_년', today))
 
 
 def save_fr_year():
@@ -243,7 +244,7 @@ def save_fr_year():
             continue
         except KeyError:
             continue
-    total_fs.to_excel(r'.\data\{}\재무비율_년.xlsx'.format(today))
+    total_fs.to_excel(setting.DATAPATH.format(today, '재무비율_년', today))
 
 def save_iv_year():
     today = setting.get_today_str()
@@ -269,7 +270,7 @@ def save_iv_year():
             continue
         except KeyError:
             continue
-    total_iv.to_excel(r'.\data\{}\투자지표.xlsx'.format(today))
+    total_iv.to_excel(setting.DATAPATH.format(today, '투자지표_년', today))
 
 def save_is():
     today = setting.get_today_str()
@@ -297,7 +298,7 @@ def save_is():
         except KeyError:
             continue
 
-    total_iv.to_excel(r'.\data\{}\상장주식수.xlsx'.format(today))
+    total_iv.to_excel(setting.DATAPATH.format(today, '상장주식수', today))
 
 def make_dir():
     today = setting.get_today_str()
