@@ -18,7 +18,10 @@ g_objCpTrade = win32com.client.Dispatch('CpTrade.CpTdUtil')
 ################################################
 
 FORMAT_DATETIME = "%Y-%m-%d"
-today = setting.get_time_str()
+today = setting.get_today_str()
+
+DATAPATH_1 = setting.DATAPATH.format(today, 'data', today)
+DATAPATH_2 = setting.DATAPATH.format(today, 'data_small', today)
 
 # PLUS 실행 기본 체크 함수
 def InitPlusCheck():
@@ -259,8 +262,8 @@ class CMarketTotal():
         data_df.index = data_df['종목코드']
 
 
-        sorted_df = self.make_low_cap(data_df)
-        sorted_df.to_excel(setting.DATAPATH.format(today, 'lowcap_sorted', today))
+        # sorted_df = self.make_low_cap(data_df)
+        # sorted_df.to_excel(setting.DATAPATH.format(today, 'data_small', today))
         data_df.to_excel(setting.DATAPATH.format(today, 'data', today))
 
 
@@ -283,7 +286,7 @@ class quant:
     def make_value_combo(self, value_list, invest_df, num):
 
         for i, value in enumerate(value_list):
-            temp_df = self.get_value_rank(invest_df, value, None)
+            temp_df = self.get_value_rank_asc(invest_df, value, None)
             if i == 0:
                 value_combo_df = temp_df
                 rank_combo = temp_df[value + '순위']
@@ -295,6 +298,24 @@ class quant:
         value_combo_df = value_combo_df.sort_values(by='종합순위')
 
         return value_combo_df[:num]
+
+    #high GPA 추출
+    def make_high_combo(self, value_list , invest_df, num):
+        for i, value in enumerate(value_list):
+            temp_df = self.get_value_rank_des(invest_df, value, None)
+            if i == 0:
+                value_combo_df = temp_df
+                rank_combo = temp_df[value + '순위']
+            else:
+                value_combo_df = pd.merge(value_combo_df, temp_df, how='outer', left_index=True, right_index=True)
+                rank_combo = rank_combo + temp_df[value + '순위']
+
+        value_combo_df['종합순위'] = rank_combo.rank()
+        value_combo_df = value_combo_df.sort_values(by='종합순위')
+
+        return value_combo_df[:num]
+
+
 
     # F-score
     def get_fscore(self, fscore_df, num):
@@ -343,6 +364,8 @@ class quant:
 
         return fscore_df[:num]
 
+
+
     # 저평가 + F-score
     def get_value_quality(self, fs_df, num):
         # low_market_cap = self.make_market_cap(fs_df, 200)
@@ -353,11 +376,27 @@ class quant:
         vq_df = value_quality_filtered.sort_values(by='종합순위')
         return vq_df[:num]
 
+    def get_value_quality_2(self, fs_df,num):
+        value = self.make_high_combo(['GP/A'], fs_df, None)
+        quality = self.get_fscore_1(fs_df, None)
+        value_quality = pd.merge(value, quality, how='outer', left_index=True, right_index=True)
+        value_quality_filtered = value_quality[value_quality['종합점수'] == 5]
+        vq_df = value_quality_filtered.sort_values(by='종합순위')
+        return vq_df[:num]
+
+
     # 저평가 지수를 기준으로 정렬하여 순위 만들어 주는 함수
-    def get_value_rank(self,invest_df, value_type, num):
+    def get_value_rank_asc(self,invest_df, value_type, num):
         invest_df[value_type] = pd.to_numeric(invest_df[value_type])
         value_sorted = invest_df.sort_values(by=value_type)
         value_sorted[value_type + '순위'] = value_sorted[value_type].rank()
+        return value_sorted[[value_type, value_type + '순위']][:num]
+
+    # 저평가 지수를 기준으로 정렬하여 순위 만들어 주는 함수
+    def get_value_rank_des(self,invest_df, value_type, num):
+        invest_df[value_type] = pd.to_numeric(invest_df[value_type])
+        value_sorted = invest_df.sort_values(by=value_type, ascending=False)
+        value_sorted[value_type + '순위'] = value_sorted[value_type].rank(ascending=False)
         return value_sorted[[value_type, value_type + '순위']][:num]
 
     # 재무 관련 데이터 전처리하는 함수
@@ -366,8 +405,11 @@ class quant:
         raw_data = pd.read_excel(data_path , index_col=0)
         return raw_data
 
-    def save_finance_data(self, data_df):
-        data_df.to_excel(setting.DATAPATH.format(today, 'data_sort', today))
+    def save_finance_data(self, data_df, path):
+        _path  = path.split('\\')
+        dotpath =_path[3].split('.')
+        path = str(_path[0]) + '\\' +str(_path[1]) +'\\'+ str(_path[2])  + '\\' +str(dotpath[0]) +'_sort.' + str(dotpath[1])
+        data_df.to_excel(path)
 
 
     def get_finance_data(self, path):
@@ -406,8 +448,7 @@ def float_to_str(df):
 
 def data_merge_fr(value_list):
     quant_test = quant()
-    path = setting.DATAPATH.format(today, 'data', today)
-    df_data_main = quant_test.get_load(path)
+    df_data_main = quant_test.get_load(DATAPATH_1)
 
     path = setting.DATAPATH.format(today, '재무비율_년', today)
     df_data_sub = quant_test.get_finance_data(path)
@@ -429,19 +470,20 @@ def data_merge_fr(value_list):
         value_2 = value[:4] + "/" + value[4:len(value) - 2]
         data[df_data_sub.index[num]] = float(df_data_sub[(format(value_2), '총자산회전율')].loc[df_data_sub.index[num]]) - float(df_data_sub[(format(value_1), '총자산회전율')].loc[df_data_sub.index[num]])
         data_2[df_data_sub.index[num]] = float(df_data_sub[(format(value_2), 'ROA')].apply(check_IFRS).loc[df_data_sub.index[num]]) - float(df_data_sub[(format(value_1), 'ROA')].apply(check_IFRS).loc[df_data_sub.index[num]])
+
+
     add_srs = pd.Series(data)
     add_srs_2 = pd.Series(data_2)
     df_data_main['전년대비총자산회전율'] = add_srs
     df_data_main['전년대비ROA증가율'] = add_srs_2
 
-    df_data_main.to_excel(setting.DATAPATH.format(today, 'data', today))
+    df_data_main.to_excel(DATAPATH_1)
 
     return df_data_main
 
 def data_merge_fs(value_list):
     quant_test = quant()
-    path = setting.DATAPATH.format(today, 'data', today)
-    df_data_main = quant_test.get_load(path)
+    df_data_main = quant_test.get_load(DATAPATH_1)
 
     path = setting.DATAPATH.format(today, '재무제표_년', today)
     df_data_sub = quant_test.get_finance_data(path)
@@ -457,14 +499,22 @@ def data_merge_fs(value_list):
         add_srs = pd.Series(data)
         df_data_main[contents] = add_srs
 
-    df_data_main.to_excel(setting.DATAPATH.format(today, 'data', today))
+    for num, value in enumerate(df_data):
+        value = str(value)
+        value = value[:4] + "/" + value[4:len(value) - 2]
+        data[df_data_sub.index[num]] = df_data_sub[(format(value), '매출총이익')].loc[df_data_sub.index[num]] / \
+                                       df_data_sub[(format(value), '자산')].loc[df_data_sub.index[num]]
+    add_srs = pd.Series(data)
+    df_data_main['GP/A'] = add_srs
+
+    df_data_main.to_excel(DATAPATH_1)
+
 
     return df_data_main
 
 def data_merge_iv(value_list):
     quant_test = quant()
-    path = setting.DATAPATH.format(today, 'data', today)
-    df_data_main = quant_test.get_load(path)
+    df_data_main = quant_test.get_load(DATAPATH_1)
 
     path = setting.DATAPATH.format(today, '투자지표', today)
     df_data_sub = quant_test.get_finance_data(path)
@@ -479,20 +529,13 @@ def data_merge_iv(value_list):
         add_srs = pd.Series(data)
         df_data_main[contents] = add_srs
 
-    for num, value in enumerate(df_data):
-        value = str(value)
-        value = value[:4] + "/" + value[4:len(value) - 2]
-        data[df_data_sub.index[num]] = df_data_sub[(format(value), '매출총이익')].loc[df_data_sub.index[num]] / df_data_sub[(format(value), '자산')].loc[df_data_sub.index[num]]
-    add_srs = pd.Series(data)
-    df_data_main['GP/A'] = add_srs
-
-    df_data_main.to_excel(setting.DATAPATH.format(today, 'data', today))
+    df_data_main.to_excel(DATAPATH_1)
 
     return df_data_main
+
 def data_merge_st(value_list):
     quant_test = quant()
-    path = setting.DATAPATH.format(today, 'data', today)
-    df_data_main = quant_test.get_load(path)
+    df_data_main = quant_test.get_load(DATAPATH_1)
 
     path = setting.DATAPATH.format(today, '상장주식수', today)
     df_data_sub = quant_test.get_finance_data(path)
@@ -519,18 +562,20 @@ def data_merge_st(value_list):
         add_srs = pd.Series(data)
         df_data_main['상장주식수변화량'] = add_srs
 
-    df_data_main.to_excel(setting.DATAPATH.format(today, 'data', today))
+    df_data_main.to_excel(DATAPATH_1)
+
 
 
 
 #     순위 구하기
 def data_rank():
     quant_test =  quant()
-    path = setting.DATAPATH.format(today, 'data', today)
-    df_data = quant_test.get_load(path)
-    df_sort = quant_test.get_value_quality(df_data, None)
-    quant_test.save_finance_data(df_sort)
-    return df_sort
+    df_data_1 = quant_test.get_load(DATAPATH_1)
+    df_data_2 = quant_test.get_load(DATAPATH_2)
+    df_sort_1 = quant_test.get_value_quality_2(df_data_1, None)
+    df_sort_2 = quant_test.get_value_quality_2(df_data_2, None)
+    quant_test.save_finance_data(df_sort_1, DATAPATH_1)
+    quant_test.save_finance_data(df_sort_2, DATAPATH_2)
 
 def data_load():
     # 매일 데이터 불러오기.
@@ -544,13 +589,27 @@ def check_IFRS(x):
     else:
         return x
 
+
+def make_low_cap(data_df):
+    data_df = data_df.sort_values('시가총액', ascending=False)
+    sorted_df = data_df[int(len(data_df) / 4) * 3: int(len(data_df) / 4) * 4]
+    return sorted_df
+def make_small_data():
+    quant_test = quant()
+    df_data_main = quant_test.get_load(DATAPATH_1)
+    sorted_df = make_low_cap(df_data_main)
+    sorted_df.to_excel(DATAPATH_2)
+
+
+
 if __name__ == "__main__":
     # 매일 데이터 불러오기.
-    # data_load()
-    # data_merge_fs(['자산', '부채', '자본', '영업활동으로인한현금흐름'])
-    # data_merge_fr(['총자산회전율', 'ROA'])
-    # data_merge_iv(['총현금흐름'])
-    # data_merge_st(['발행주식수'])
+    data_load()
+    data_merge_fs(['자산', '부채', '자본', '영업활동으로인한현금흐름','매출총이익'])
+    data_merge_fr(['총자산회전율', 'ROA'])
+    data_merge_iv(['총현금흐름'])
+    data_merge_st(['발행주식수'])
+    make_small_data()
     data_rank()
     print('끝!!!!')
 

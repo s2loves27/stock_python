@@ -13,7 +13,6 @@ g_objCpStatus = win32com.client.Dispatch('CpUtil.CpCybos')
 g_objCpTrade = win32com.client.Dispatch('CpTrade.CpTdUtil')
 
 # gExcelFile = '8092.xlsx'
-DATAPATH = r
 
 def InitPlusCheck():
     # 프로세스가 관리자 권한으로 실행 여부

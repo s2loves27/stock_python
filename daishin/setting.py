@@ -8,7 +8,7 @@ import pandas as pd
 import time
 
 
-DATAPATH = r'.\data\{}\{}{}.xlsm'
+DATAPATH = r'.\data\{}\{}{}.xlsx'
 NEWPATH = r'.\data\new{}.xlsx'
 
 
