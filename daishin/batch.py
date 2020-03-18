@@ -218,7 +218,7 @@ def save_fs_year():
         except KeyError:
             continue
 
-    total_fs_y.to_excel(setting.DATAPATH.format(today, '제무제표_년', today))
+    total_fs_y.to_excel(setting.DATAPATH.format(today, '재무제표_년', today))
 
 
 def save_fr_year():
@@ -314,8 +314,8 @@ def make_dir():
 if __name__ == "__main__":
     make_dir()
     save_fs_year()
-    # save_fr_year()
-    # save_iv_year()
-    # save_is()
+    save_fr_year()
+    save_iv_year()
+    save_is()
 
 

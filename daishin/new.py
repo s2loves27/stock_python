@@ -1,3 +1,4 @@
+import datetime
 import sys
 from PyQt5.QtWidgets import *
 import win32com.client
@@ -106,6 +107,7 @@ class CpEvent:
                 time = self.client.GetDataValue(0, i)
                 h, m = divmod(time, 100)
                 item['시간'] = '%02d:%02d' % (h, m)
+                item['날짜'] = get_today_str()
                 update = self.client.GetDataValue(1, i)
                 item['코드'] = code
                 item['종목명'] = name
@@ -131,6 +133,7 @@ class CpEvent:
             code = item['코드'] = self.client.GetHeaderValue(1)
             time = self.client.GetHeaderValue(2)
             h, m = divmod(time, 100)
+            item['날짜'] = get_today_str()
             item['시간'] = '%02d:%02d' % (h, m)
             item['종목명'] = name = g_objCodeMgr.CodeToName(code)
             cate = self.client.GetHeaderValue(4)
@@ -205,6 +208,7 @@ class CpRpMarketWatch:
 
             time = self.objStockMst.GetDataValue(0, i)
             h, m = divmod(time, 100)
+            item['날짜'] = get_today_str()
             item['시간'] = '%02d:%02d' % (h, m)
             item['코드'] = self.objStockMst.GetDataValue(1, i)
             item['종목명'] = g_objCodeMgr.CodeToName(item['코드'])
@@ -277,7 +281,7 @@ class MyWindow(QMainWindow):
 
         if os.path.exists(setting.NEWPATH.format(today)):
             df_old = pd.read_excel(setting.NEWPATH.format(today))
-            df = df_old[['코드','종목명','시간','특이사항']].append(df[['코드','종목명','시간','특이사항']])
+            df = df_old[['날짜','코드','종목명','시간','특이사항']].append(df[['날짜','코드','종목명','시간','특이사항']])
 
         print(df)
         df = df.sort_values(by=['종목명','시간'],axis = 0)
@@ -307,7 +311,7 @@ class MyWindow(QMainWindow):
     def execute_func(self,second=1.0):
         if self.end == False:
             return
-        df = pd.DataFrame(columns=['시간', '코드', '종목명', '특이사항','Update'])
+        df = pd.DataFrame(columns=['날짜', '시간', '코드', '종목명', '특이사항','Update'])
 
         for item in self.listWatchData:
             df.loc[len(df)] = item
@@ -318,6 +322,13 @@ class MyWindow(QMainWindow):
 
         threading.Timer(second, self.execute_func, [second]).start()
 
+
+# Settings on Logging
+def get_today_str():
+    global today
+    today = datetime.datetime.combine(datetime.date.today(), datetime.datetime.min.time())
+    today_str = today.strftime('%Y%m%d')
+    return today_str
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)

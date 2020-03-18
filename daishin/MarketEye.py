@@ -468,7 +468,7 @@ def data_merge_fr(value_list):
         year = int(value[:4]) - 1
         value_1 = str(year) + "/" + "12"
         value_2 = value[:4] + "/" + value[4:len(value) - 2]
-        data[df_data_sub.index[num]] = float(df_data_sub[(format(value_2), '총자산회전율')].loc[df_data_sub.index[num]]) - float(df_data_sub[(format(value_1), '총자산회전율')].loc[df_data_sub.index[num]])
+        data[df_data_sub.index[num]] = float(df_data_sub[(format(value_2), '총자산회전율')].apply(check_IFRS).loc[df_data_sub.index[num]]) - float(df_data_sub[(format(value_1), '총자산회전율')].apply(check_IFRS).loc[df_data_sub.index[num]])
         data_2[df_data_sub.index[num]] = float(df_data_sub[(format(value_2), 'ROA')].apply(check_IFRS).loc[df_data_sub.index[num]]) - float(df_data_sub[(format(value_1), 'ROA')].apply(check_IFRS).loc[df_data_sub.index[num]])
 
 
@@ -516,7 +516,7 @@ def data_merge_iv(value_list):
     quant_test = quant()
     df_data_main = quant_test.get_load(DATAPATH_1)
 
-    path = setting.DATAPATH.format(today, '투자지표', today)
+    path = setting.DATAPATH.format(today, '투자지표_년', today)
     df_data_sub = quant_test.get_finance_data(path)
 
     data = {}
@@ -594,6 +594,7 @@ def make_low_cap(data_df):
     data_df = data_df.sort_values('시가총액', ascending=False)
     sorted_df = data_df[int(len(data_df) / 4) * 3: int(len(data_df) / 4) * 4]
     return sorted_df
+
 def make_small_data():
     quant_test = quant()
     df_data_main = quant_test.get_load(DATAPATH_1)
