@@ -96,35 +96,41 @@ class CpEvent:
     def OnReceived(self):
         print(self.name)
         # 실시간 처리 - marketwatch : 특이 신호(차트, 외국인 순매수 등)
-        if self.name == 'marketwatch':
-            code = self.client.GetHeaderValue(0)
-            name = g_objCodeMgr.CodeToName(code)
-            cnt = self.client.GetHeaderValue(2)
-
-            for i in range(cnt):
-                item = {}
-                newcancel = ''
-                time = self.client.GetDataValue(0, i)
-                h, m = divmod(time, 100)
-                item['시간'] = '%02d:%02d' % (h, m)
-                item['날짜'] = get_today_str()
-                update = self.client.GetDataValue(1, i)
-                item['코드'] = code
-                item['종목명'] = name
-                cate = self.client.GetDataValue(2, i)
-                if (update == ord('c')):
-                    newcancel = '[취소]'
-                if cate in self.diccode:
-                    item['특이사항'] = newcancel + self.diccode[cate]
-                else:
-                    item['특이사항'] = newcancel + ''
-                item['Update'] = False
-
-                self.caller.listWatchData.insert(0, item)
-                print(item)
+        # if self.name == 'marketwatch':
+        #     return
+        #     code = self.client.GetHeaderValue(0)
+        #     name = g_objCodeMgr.CodeToName(code)
+        #     cnt = self.client.GetHeaderValue(2)
+        #
+        #     for i in range(cnt):
+        #         item = {}
+        #         newcancel = ''
+        #         time = self.client.GetDataValue(0, i)
+        #         h, m = divmod(time, 100)
+        #         item['시간'] = '%02d%02d' % (h, m)
+        #         item['날짜'] = get_today_str()
+        #         update = self.client.GetDataValue(1, i)
+        #         item['코드'] = code
+        #         item['종목명'] = name
+        #         cate = self.client.GetDataValue(2, i)
+        #         if (update == ord('c')):
+        #             newcancel = '[취소]'
+        #         if cate in self.diccode:
+        #             item['특이사항'] = newcancel + self.diccode[cate]
+        #         else:
+        #             item['특이사항'] = newcancel + ''
+        #         item['Update'] = False
+        #         item['Score_Update'] = False
+        #
+        #         if h > 9 and h < 16:
+        #             item['상태'] = 1
+        #         else:
+        #             item['상태'] = 0
+        #         self.caller.listWatchData.insert(0, item)
+        #         print(item)
 
         # 실시간 처리 - marketnews : 뉴스 및 공시 정보
-        elif self.name == 'marketnews':
+        if self.name == 'marketnews':
             item = {}
             update = self.client.GetHeaderValue(0)
             cont = ''
@@ -134,11 +140,16 @@ class CpEvent:
             time = self.client.GetHeaderValue(2)
             h, m = divmod(time, 100)
             item['날짜'] = get_today_str()
-            item['시간'] = '%02d:%02d' % (h, m)
+            item['시간'] = '%02d%02d' % (h, m)
             item['종목명'] = name = g_objCodeMgr.CodeToName(code)
             cate = self.client.GetHeaderValue(4)
             item['특이사항'] = cont + self.client.GetHeaderValue(5)
+            item['특이사항'] = item['특이사항'].replace(item['종목명'],"")
             item['Update'] = False
+            item['Score_Update'] = False
+            if h > 9 and h < 16:
+                item['상태'] = 1
+            else: item['상태'] = 0
             print(item)
             self.caller.listWatchData.insert(0, item)
 
@@ -204,19 +215,37 @@ class CpRpMarketWatch:
 
         cnt = self.objStockMst.GetHeaderValue(2)  # 수신 개수
         for i in range(cnt):
-            item = {}
+            if self.objStockMst.GetDataValue(4, i) == '52주 신고가 - 코스닥':
+                pass
+            elif self.objStockMst.GetDataValue(4, i) == '52주 신고가 - 코스피':
+                pass
+            if self.objStockMst.GetDataValue(4, i) == '52주 신저가 - 코스닥':
+                pass
+            elif self.objStockMst.GetDataValue(4, i) == '52주 신저가 - 코스피':
+                pass
+            else:
+                item = {}
 
-            time = self.objStockMst.GetDataValue(0, i)
-            h, m = divmod(time, 100)
-            item['날짜'] = get_today_str()
-            item['시간'] = '%02d:%02d' % (h, m)
-            item['코드'] = self.objStockMst.GetDataValue(1, i)
-            item['종목명'] = g_objCodeMgr.CodeToName(item['코드'])
-            cate = self.objStockMst.GetDataValue(3, i)
-            item['특이사항'] = self.objStockMst.GetDataValue(4, i)
-            item['Update'] = False
-            print(item)
-            caller.listWatchData.append(item)
+                time = self.objStockMst.GetDataValue(0, i)
+                h, m = divmod(time, 100)
+
+                item['날짜'] = get_today_str()
+                item['시간'] = '%02d%02d' % (h, m)
+                item['코드'] = self.objStockMst.GetDataValue(1, i)
+                item['종목명'] = g_objCodeMgr.CodeToName(item['코드'])
+                cate = self.objStockMst.GetDataValue(3, i)
+                item['특이사항'] = self.objStockMst.GetDataValue(4, i)
+                item['특이사항'] = item['특이사항'].replace(item['종목명'],"")
+                item['Update'] = False
+                item['Score_Update'] = False
+                if h >= 9 and h < 16:
+                    item['상태'] = 1
+                elif h < 9:
+                    item['상태'] = -1
+                elif h >= 16:
+                    item['상태'] = 0
+                print(item)
+                caller.listWatchData.append(item)
 
         self.objpbMarket.Subscribe(code, caller)
         self.objpbNews.Subscribe(code, caller)
@@ -311,7 +340,7 @@ class MyWindow(QMainWindow):
     def execute_func(self,second=1.0):
         if self.end == False:
             return
-        df = pd.DataFrame(columns=['날짜', '시간', '코드', '종목명', '특이사항','Update'])
+        df = pd.DataFrame(columns=['날짜', '시간', '코드', '종목명', '특이사항','Update','Score_Update','상태'])
 
         for item in self.listWatchData:
             df.loc[len(df)] = item

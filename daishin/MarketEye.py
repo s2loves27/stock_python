@@ -457,6 +457,8 @@ def data_merge_fr(value_list):
     df_data = df_data_main['분기결산년월'].dropna()
     for i, contents in enumerate(value_list):
         for num, value in enumerate(df_data):
+            if num >= len(df_data_sub):
+                break
             value = str(value)
             value = value[:4] + "/" + value[4:len(value) - 2]
             data[df_data_sub.index[num]] = df_data_sub[(format(value), contents)].loc[df_data_sub.index[num]]
@@ -464,6 +466,8 @@ def data_merge_fr(value_list):
         df_data_main[contents] = add_srs
     data_2 = {}
     for num, value in enumerate(df_data):
+        if num >= len(df_data_sub):
+            break
         value = str(value)
         year = int(value[:4]) - 1
         value_1 = str(year) + "/" + "12"
@@ -489,10 +493,15 @@ def data_merge_fs(value_list):
     df_data_sub = quant_test.get_finance_data(path)
 
     data = {}
-
+    print(len(df_data_main))
     df_data = df_data_main['분기결산년월'].dropna()
+    print(len(df_data))
     for i, contents in enumerate(value_list):
+
         for num, value in enumerate(df_data):
+            print(num)
+            if num >= len(df_data_sub):
+                break
             value = str(value)
             value = value[:4] + "/" + value[4:len(value) - 2]
             data[df_data_sub.index[num]] = df_data_sub[(format(value), contents)].loc[df_data_sub.index[num]]
@@ -500,6 +509,8 @@ def data_merge_fs(value_list):
         df_data_main[contents] = add_srs
 
     for num, value in enumerate(df_data):
+        if num >= len(df_data_sub):
+            break
         value = str(value)
         value = value[:4] + "/" + value[4:len(value) - 2]
         data[df_data_sub.index[num]] = df_data_sub[(format(value), '매출총이익')].loc[df_data_sub.index[num]] / \
@@ -523,6 +534,8 @@ def data_merge_iv(value_list):
     df_data = df_data_main['분기결산년월'].dropna()
     for i, contents in enumerate(value_list):
         for num, value in enumerate(df_data):
+            if num >= len(df_data_sub):
+                break
             value = str(value)
             value = value[:4] + "/" + value[4:len(value) - 2]
             data[df_data_sub.index[num]] = df_data_sub[(format(value), contents)].loc[df_data_sub.index[num]]
@@ -545,6 +558,8 @@ def data_merge_st(value_list):
 
     for i, contents in enumerate(value_list):
         for num, value in enumerate(df_data):
+            if num >= len(df_data_sub):
+                break
             value = str(value)
             year = int(value[:4]) - 1
             month = int(value[4:len(value) - 2])

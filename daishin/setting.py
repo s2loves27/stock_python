@@ -25,7 +25,7 @@ def get_connetion(host = '127.0.0.1', port = 27017, db = 'DeepLearning'):
     # else:
     global conn
     conn = MongoClient(host, port)
-
+    print('connetion')
     return conn[db]
 
 def get_collect( col, host = '127.0.0.1', port = 27017, db = 'DeepLearning'):
@@ -35,13 +35,11 @@ def get_collect( col, host = '127.0.0.1', port = 27017, db = 'DeepLearning'):
     if conn == None:
         get_connetion()
     collect = conn[db][col]
+    print(collect)
     return collect
 
 def read_mongo(col, query, host = '127.0.0.1', port = 27017 , db = 'DeepLearning'):
-    global collect
-
-    if collect == None:
-        get_collect(col)
+    get_collect(col)
     if query == None:
         cursor = collect.find()
     else:
@@ -49,9 +47,7 @@ def read_mongo(col, query, host = '127.0.0.1', port = 27017 , db = 'DeepLearning
     return pd.DataFrame(list(cursor))
 
 def write_mongo(col, df):
-    global collect
-    if collect == None:
-        get_collect(col)
+    get_collect(col)
     dict = df.to_dict('records')
     if(len(dict) == 0):
         pass
@@ -60,11 +56,9 @@ def write_mongo(col, df):
     else:
         collect.insert_many(df.to_dict('records'))
 
-
 def update_mongo(col, query , document):
-    global collect
-    if collect == None:
-        get_collect(col)
+
+    get_collect(col)
     collect.update_many(query, document)
 
 # df = pd.DataFrame({'high':[1,2,6],'low':[4,5,5],'Update':[False,False,True]})
@@ -86,6 +80,13 @@ def get_today_str():
     global today
     today = datetime.datetime.combine(datetime.date.today(), datetime.datetime.min.time())
     today_str = today.strftime('%Y-%m-%d')
+    return today_str
+
+# Settings on Logging
+def get_today_str_1():
+    global today
+    today = datetime.datetime.combine(datetime.date.today(), datetime.datetime.min.time())
+    today_str = today.strftime('%Y%m%d')
     return today_str
 
 def get_time_str():

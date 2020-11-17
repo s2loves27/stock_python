@@ -20,7 +20,7 @@ class Code_Load:
         codeList = objCpCodeMgr.GetStockListByMarket(1)  # 거래소
         codeList2 = objCpCodeMgr.GetStockListByMarket(2)  # 코스닥
 
-
+        print(str(len(codeList + codeList2)) + "종목을 불어왓습니다.")
 
         for i, code in enumerate(codeList):
             secondCode = objCpCodeMgr.GetStockSectionKind(code)
@@ -140,6 +140,7 @@ if __name__ == '__main__':
 
     df_code = pd.DataFrame(code,columns=['종목코드', 'secondCode', '가격', '회사명'])
     df_code.to_excel(r'.\종목코드.xlsx')
+    print("finish: code load")
 
 
 

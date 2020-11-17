@@ -1,132 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="6c16a619-fead-495b-af4f-10fce2f6dd2e" name="Default Changelist" comment="+change">
-      <change afterPath="$PROJECT_DIR$/daishin/ChartEx.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/daishin/minute.py" afterDir="false" />
+    <list default="true" id="6c16a619-fead-495b-af4f-10fce2f6dd2e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/daishin/MainThread.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/daishin/Market_daydata.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/daishin/balance.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/daishin/dbtest.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/daishin/load_10.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/daishin/make_chart.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/daishin/new_score_1.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/daishin/trade.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kiwoom/PyQt5Ex.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kiwoom/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kiwoom/apiTest/apiTest.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kiwoom/apiTest/apiTest.ui" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kiwoom/kiwoomLogin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/stock_python.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/stock_python.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Stock/8092.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Stock/8092.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daishin/CodeLoad.py" beforeDir="false" afterPath="$PROJECT_DIR$/daishin/CodeLoad.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/daishin/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/daishin/Main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/daishin/MarketEye.py" beforeDir="false" afterPath="$PROJECT_DIR$/daishin/MarketEye.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daishin/batch.py" beforeDir="false" afterPath="$PROJECT_DIR$/daishin/batch.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/daishin/new.py" beforeDir="false" afterPath="$PROJECT_DIR$/daishin/new.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/daishin/setting.py" beforeDir="false" afterPath="$PROJECT_DIR$/daishin/setting.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/daishin/종목코드.xlsx" beforeDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/daishin/MarketEye.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="526">
-              <caret line="597" column="22" lean-forward="true" selection-start-line="597" selection-start-column="22" selection-end-line="597" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/daishin/Main.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-798">
-              <caret line="38" column="70" selection-start-line="38" selection-start-column="70" selection-end-line="38" selection-end-column="70" />
-              <folding>
-                <element signature="e#0#22#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/daishin/batch.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="692">
-              <caret line="310" column="17" selection-start-line="310" selection-start-column="17" selection-end-line="310" selection-end-column="17" />
-              <folding>
-                <element signature="e#49#61#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/daishin/ChartEx.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1476">
-              <caret line="303" column="30" lean-forward="true" selection-start-line="303" selection-start-column="30" selection-end-line="303" selection-end-column="30" />
-              <folding>
-                <element signature="e#0#10#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/daishin/new.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="293">
-              <caret line="305" lean-forward="true" selection-start-line="305" selection-end-line="305" />
-              <folding>
-                <element signature="e#0#15#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/daishin/minute.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="583">
-              <caret line="204" column="48" selection-start-line="204" selection-start-column="48" selection-end-line="204" selection-end-column="48" />
-              <folding>
-                <element signature="e#0#10#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/daishin/networkCheck.py">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/daishin/CodeLoad.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="825">
-              <caret line="52" column="21" selection-start-line="52" selection-start-column="10" selection-end-line="52" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/daishin/setting.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="659">
-              <caret line="83" selection-start-line="83" selection-end-line="88" selection-end-column="20" />
-              <folding>
-                <element signature="e#19#33#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Stock/news.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="559">
-              <caret line="269" column="21" selection-start-line="269" selection-start-column="21" selection-end-line="269" selection-end-column="21" />
-              <folding>
-                <element signature="e#0#10#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -135,158 +55,28 @@
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>lowcap</find>
-      <find>setting.DATAPATH</find>
-      <find>setting.DATAPATH.format(today, 'data', today)</find>
-      <find>DATAPATH</find>
-      <find>data_load</find>
-      <find>save_finance_data</find>
-      <find>get_load</find>
-      <find>data_small</find>
-      <find>DATAPATH_2</find>
-      <find>quant_test</find>
-      <find>quant</find>
-      <find>data_rank</find>
-      <find>check_IFRS</find>
-      <find>g_objCodeMgr</find>
-      <find>CMinchartData</find>
-      <find>addCode</find>
-      <find>CpPBStockCur</find>
-      <find>CpEvent</find>
-      <find>stockcur</find>
-      <find>CpPublish</find>
-      <find>btchart3_clicked</find>
-      <find>RequestMT</find>
-      <find>caller</find>
-      <find>CpMarketWatch</find>
-      <find>시간</find>
-      <find>closes</find>
-      <find>투자지표</find>
-      <find>updateCurData</find>
-      <find>FORMAT_DATE</find>
-      <find>SetInputValue</find>
-    </findStrings>
-    <replaceStrings>
-      <replace>DATA_PATH</replace>
-      <replace />
-    </replaceStrings>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/Stock/creon.py" />
-        <option value="$PROJECT_DIR$/Stock/data_manager.py" />
-        <option value="$PROJECT_DIR$/daishin/CodeEx.py" />
-        <option value="$PROJECT_DIR$/daishin/CurrentPriceEx.py" />
-        <option value="$PROJECT_DIR$/daishin/StockWeek.py" />
-        <option value="$PROJECT_DIR$/daishin/qttest.py" />
-        <option value="$PROJECT_DIR$/daishin/Multi_CurrentPriceEx.py" />
-        <option value="$PROJECT_DIR$/daishin/MACD_Chart.py" />
-        <option value="$PROJECT_DIR$/daishin/Top200Ex.py" />
-        <option value="$PROJECT_DIR$/daishin/ViEx.py" />
-        <option value="$PROJECT_DIR$/study/study_for.py" />
-        <option value="$PROJECT_DIR$/daishin/dbtest.py" />
-        <option value="$PROJECT_DIR$/daishin/data/test.py" />
-        <option value="$PROJECT_DIR$/daishin/setting.py" />
-        <option value="$PROJECT_DIR$/daishin/minute.py" />
-        <option value="$PROJECT_DIR$/daishin/ChartEx.py" />
-        <option value="$PROJECT_DIR$/daishin/batch.py" />
-        <option value="$PROJECT_DIR$/daishin/MarketEye.py" />
-        <option value="$PROJECT_DIR$/daishin/CodeLoad.py" />
-        <option value="$PROJECT_DIR$/daishin/new.py" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-7" />
-    <option name="width" value="1734" />
-    <option name="height" value="1407" />
-  </component>
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="stock_python" type="b2602c69:ProjectViewProjectNode" />
-              <item name="stock_python" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="stock_python" type="b2602c69:ProjectViewProjectNode" />
-              <item name="stock_python" type="462c0819:PsiDirectoryNode" />
-              <item name="daishin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="stock_python" type="b2602c69:ProjectViewProjectNode" />
-              <item name="stock_python" type="462c0819:PsiDirectoryNode" />
-              <item name="daishin" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="stock_python" type="b2602c69:ProjectViewProjectNode" />
-              <item name="stock_python" type="462c0819:PsiDirectoryNode" />
-              <item name="daishin" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-              <item name="2020-03-18" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-    </panes>
+  <component name="ProjectId" id="1evg3uP76F0GU0FPTxNhJgOYOha" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="settings.github" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\git\stock_python\kiwoom\apiTest" />
       <recent name="C:\git\stock_python\daishin\data\2020-03-13" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager" selected="Python.new">
-    <configuration name="ChartEx" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="stock_python" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/daishin" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/daishin/ChartEx.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="true" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="CodeLoad" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.batch">
+    <configuration name="Main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="stock_python" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -298,7 +88,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/daishin/CodeLoad.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/daishin/Main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -307,7 +97,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="MarketEye" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="MarketEye" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="stock_python" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -328,7 +118,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="batch" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="Market_daydata" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="stock_python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/daishin" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/daishin/Market_daydata.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="batch" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="stock_python" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -349,7 +160,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="new" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="make_chart" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="stock_python" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -361,7 +172,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/daishin/new.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/daishin/make_chart.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -372,11 +183,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.new" />
-        <item itemvalue="Python.CodeLoad" />
-        <item itemvalue="Python.MarketEye" />
         <item itemvalue="Python.batch" />
-        <item itemvalue="Python.ChartEx" />
+        <item itemvalue="Python.Main" />
+        <item itemvalue="Python.MarketEye" />
+        <item itemvalue="Python.Market_daydata" />
+        <item itemvalue="Python.make_chart" />
       </list>
     </recent_temporary>
   </component>
@@ -447,40 +258,27 @@
       <option name="project" value="LOCAL" />
       <updated>1584088454814</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="+change">
+      <created>1584514646274</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1584514646274</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
-  <component name="TodoView">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="1734" height="1407" extended-state="0" />
-    <editor active="true" />
-    <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2806604" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.48879716" visible="true" weight="0.16339356" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49210066" weight="0.22932917" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49646226" weight="0.3283582" />
-      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49587265" weight="0.3283582" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.4970519" weight="0.3283582" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5112028" side_tool="true" visible="true" weight="0.16339356" />
-      <window_info anchor="bottom" id="Python Console" order="10" sideWeight="0.49587265" weight="0.32914376" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-    </layout>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_NEW_TODO" value="false" />
@@ -488,6 +286,32 @@
     <MESSAGE value="+add new" />
     <MESSAGE value="+change" />
     <option name="LAST_COMMIT_MESSAGE" value="+change" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1605574660608">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605574660608" />
+    <state width="918" height="254" key="GridCell.Tab.0.bottom" timestamp="1605575075425">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="918" height="254" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1605575075425" />
+    <state width="918" height="254" key="GridCell.Tab.0.center" timestamp="1605575075425">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="918" height="254" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1605575075425" />
+    <state width="918" height="254" key="GridCell.Tab.0.left" timestamp="1605575075425">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="918" height="254" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1605575075425" />
+    <state width="918" height="254" key="GridCell.Tab.0.right" timestamp="1605575075425">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="918" height="254" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1605575075425" />
+    <state x="668" y="118" width="584" height="804" key="find.popup" timestamp="1605575059878">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="668" y="118" width="584" height="804" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1605575059878" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -497,197 +321,17 @@
           <line>193</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/daishin/new_score_1.py</url>
+          <line>13</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/daishin/balance.py</url>
+          <line>195</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Stock/master/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Stock/creon.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="29" column="13" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Stock/data_manager.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="627">
-          <caret line="34" column="9" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/daishin/CodeEx.py" />
-    <entry file="file://$PROJECT_DIR$/daishin/CurrentPriceEx.py" />
-    <entry file="file://$PROJECT_DIR$/daishin/StockWeek.py" />
-    <entry file="file://$PROJECT_DIR$/daishin/qttest.py" />
-    <entry file="file://$PROJECT_DIR$/daishin/Multi_CurrentPriceEx.py" />
-    <entry file="file://$PROJECT_DIR$/daishin/MACD_Chart.py" />
-    <entry file="file://$PROJECT_DIR$/daishin/Top200Ex.py" />
-    <entry file="file://$PROJECT_DIR$/daishin/ViEx.py" />
-    <entry file="file://$PROJECT_DIR$/study/study_for.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" column="33" selection-start-line="3" selection-start-column="33" selection-end-line="3" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Stock/chartEx.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://C:/ProgramData/Anaconda3/envs/stock/Lib/site-packages/pymongo/collection.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="831">
-          <caret line="3338" selection-start-line="3338" selection-end-line="3338" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/ProgramData/Anaconda3/envs/stock/Lib/site-packages/pandas/core/frame.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="7122" selection-start-line="7122" selection-end-line="7122" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Stock/get-pip.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="33" column="7" selection-start-line="33" selection-start-column="7" selection-end-line="33" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/ProgramData/Anaconda3/envs/stock/Lib/site-packages/pandas/core/indexes/base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="2896" selection-start-line="2896" selection-end-line="2896" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/daishin/data/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="35" selection-start-line="4" selection-start-column="35" selection-end-line="4" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/ProgramData/Anaconda3/envs/stock/Lib/site-packages/xlsxwriter/workbook.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5605">
-          <caret line="329" selection-start-line="329" selection-end-line="329" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/ProgramData/Anaconda3/envs/stock/Lib/site-packages/pandas/util/_decorators.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3819">
-          <caret line="207" selection-start-line="207" selection-end-line="207" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/ProgramData/Anaconda3/envs/stock/Lib/site-packages/xlrd/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1539">
-          <caret line="97" selection-start-line="97" selection-end-line="97" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Stock/news.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="559">
-          <caret line="269" column="21" selection-start-line="269" selection-start-column="21" selection-end-line="269" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/ProgramData/Anaconda3/envs/stock/Lib/site-packages/IPython/core/interactiveshell.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="3325" selection-start-line="3325" selection-end-line="3325" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/daishin/batch.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="692">
-          <caret line="310" column="17" selection-start-line="310" selection-start-column="17" selection-end-line="310" selection-end-column="17" />
-          <folding>
-            <element signature="e#49#61#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/daishin/Main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-798">
-          <caret line="38" column="70" selection-start-line="38" selection-start-column="70" selection-end-line="38" selection-end-column="70" />
-          <folding>
-            <element signature="e#0#22#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/daishin/networkCheck.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/daishin/ChartEx.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1476">
-          <caret line="303" column="30" lean-forward="true" selection-start-line="303" selection-start-column="30" selection-end-line="303" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/daishin/CodeLoad.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="825">
-          <caret line="52" column="21" selection-start-line="52" selection-start-column="10" selection-end-line="52" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/daishin/MarketEye.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="526">
-          <caret line="597" column="22" lean-forward="true" selection-start-line="597" selection-start-column="22" selection-end-line="597" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/daishin/minute.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="583">
-          <caret line="204" column="48" selection-start-line="204" selection-start-column="48" selection-end-line="204" selection-end-column="48" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/daishin/setting.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="659">
-          <caret line="83" selection-start-line="83" selection-end-line="88" selection-end-column="20" />
-          <folding>
-            <element signature="e#19#33#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/daishin/new.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="305" lean-forward="true" selection-start-line="305" selection-end-line="305" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
   </component>
 </project>
